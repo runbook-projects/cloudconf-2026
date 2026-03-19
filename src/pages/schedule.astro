@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Schedule" description="CloudConf 2026 event schedule - talks, workshops, and networking sessions">
+  <style>
+    .schedule-hero {
+      background: linear-gradient(135deg, #0a0e27 0%, #1a237e 100%);
+      color: #ffffff;
+      padding: 3rem 0;
+      margin-bottom: 3rem;
+    }
+
+    .schedule-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-hero p {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+
+    .schedule-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .schedule-grid {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .schedule-item {
+      background: #f9f9f9;
+      border-left: 4px solid #64b5f6;
+      padding: 1.5rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .schedule-item:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateX(4px);
+    }
+
+    .schedule-time {
+      font-weight: 700;
+      color: #64b5f6;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0a0e27;
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-speaker {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-description {
+      color: #555;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .schedule-type {
+      display: inline-block;
+      background: #e3f2fd;
+      color: #0066cc;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .schedule-type.workshop {
+      background: #f3e5f5;
+      color: #7b1fa2;
+    }
+
+    .schedule-type.networking {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .schedule-type.keynote {
+      background: #fff3e0;
+      color: #e65100;
+    }
+
+    @media (max-width: 768px) {
+      .schedule-hero h1 {
+        font-size: 2rem;
+      }
+
+      .schedule-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+
+  <section class="schedule-hero">
+    <div class="schedule-container">
+      <h1>Event Schedule</h1>
+      <p>May 15, 2026 | San Francisco</p>
+    </div>
+  </section>
+
+  <div class="schedule-container">
+    <div class="schedule-grid">
+      <div class="schedule-item">
+        <div class="schedule-time">08:00 AM - 09:00 AM</div>
+        <div class="schedule-title">Registration & Breakfast</div>
+        <div class="schedule-description">Arrive early, grab coffee, and network with fellow attendees.</div>
+        <span class="schedule-type networking">Networking</span>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">09:00 AM - 09:45 AM</div>
+        <div class="schedule-title">Opening Keynote: The Future of Cloud Infrastructure</div>
+        <div class="schedule-speaker">Speaker: Sarah Chen, VP of Engineering at CloudTech</div>
+        <div class="schedule-description">Explore emerging trends in cloud infrastructure and what they mean for your organization.</div>
+        <span class="schedule-type keynote">Keynote</span>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">10:00 AM - 10:45 AM</div>
+        <div class="schedule-title">Kubernetes at Scale: Lessons from Production</div>
+        <div class="schedule-speaker">Speaker: Marcus Johnson, Platform Engineer at TechCorp</div>
+        <div class="schedule-description">Real-world strategies for running Kubernetes in production environments with thousands of nodes.</div>
+        <span class="schedule-type">Talk</span>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">11:00 AM - 11:45 AM</div>
+        <div class="schedule-title">Serverless Architecture Patterns</div>
+        <div class="schedule-speaker">Speaker: Elena Rodriguez, Cloud Architect at InnovateLabs</div>
+        <div class="schedule-description">Design patterns and best practices for building scalable serverless applications.</div>
+        <span class="schedule-type">Talk</span>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">12:00 PM - 01:00 PM</div>
+        <div class="schedule-title">Lunch Break</div>
+        <div class="schedule-description">Enjoy lunch and continue networking with other attendees.</div>
+        <span class="schedule-type networking">Networking</span>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">01:00 PM - 02:30 PM</div>
+        <div class="schedule-title">Workshop: Building Your First Platform</div>
+        <div class="schedule-speaker">Facilitators: David Park & Lisa Wong, Platform Engineering Experts</div>
+        <div class="schedule-description">Hands-on workshop covering the fundamentals of building an internal developer platform.</div>
+        <span class="schedule-type workshop">Workshop</span>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">02:45 PM - 03:30 PM</div>
+        <div class="schedule-title">Cost Optimization in the Cloud</div>
+        <div class="schedule-speaker">Speaker: Alex Kumar, FinOps Lead at DataStream</div>
+        <div class="schedule-description">Practical techniques for reducing cloud costs without sacrificing performance or reliability.</div>
+        <span class="schedule-type">Talk</span>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">03:45 PM - 04:30 PM</div>
+        <div class="schedule-title">Panel Discussion: The Future of Platform Engineering</div>
+        <div class="schedule-speaker">Panelists: Industry leaders discussing trends and challenges</div>
+        <div class="schedule-description">Join our panel of experts as they discuss the evolution of platform engineering and what's next.</div>
+        <span class="schedule-type">Panel</span>
+      </div>
+
+      <div class="schedule-item">
+        <div class="schedule-time">04:30 PM - 05:30 PM</div>
+        <div class="schedule-title">Closing Reception</div>
+        <div class="schedule-description">Celebrate the day with drinks, snacks, and final networking opportunities.</div>
+        <span class="schedule-type networking">Networking</span>
+      </div>
+    </div>
+  </div>
+</Layout>

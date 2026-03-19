@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Venue" description="CloudConf 2026 venue information and directions">
+  <style>
+    .venue-hero {
+      background: linear-gradient(135deg, #0a0e27 0%, #1a237e 100%);
+      color: #ffffff;
+      padding: 3rem 0;
+      margin-bottom: 3rem;
+    }
+
+    .venue-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .venue-hero p {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+
+    .venue-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .venue-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .venue-info h2 {
+      font-size: 2rem;
+      color: #0a0e27;
+      margin-bottom: 1.5rem;
+    }
+
+    .venue-details {
+      background: #f9f9f9;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .venue-details h3 {
+      font-size: 1.2rem;
+      color: #0a0e27;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .venue-details p {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .venue-details a {
+      color: #0066cc;
+      font-weight: 500;
+    }
+
+    .venue-details a:hover {
+      text-decoration: underline;
+    }
+
+    .venue-map {
+      background: #e0e0e0;
+      border-radius: 8px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .amenities {
+      background: #f5f5f5;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+    }
+
+    .amenities h2 {
+      font-size: 1.8rem;
+      color: #0a0e27;
+      margin-bottom: 1.5rem;
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .amenity-item {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 6px;
+      border-left: 4px solid #64b5f6;
+      text-align: center;
+    }
+
+    .amenity-item h3 {
+      font-size: 1.1rem;
+      color: #0a0e27;
+      margin-bottom: 0.5rem;
+    }
+
+    .amenity-item p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .transportation {
+      background: #e3f2fd;
+      padding: 2rem;
+      border-radius: 8px;
+      border-left: 4px solid #0066cc;
+    }
+
+    .transportation h2 {
+      font-size: 1.5rem;
+      color: #0a0e27;
+      margin-bottom: 1rem;
+    }
+
+    .transportation h3 {
+      font-size: 1.1rem;
+      color: #0066cc;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .transportation p {
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .venue-hero h1 {
+        font-size: 2rem;
+      }
+
+      .venue-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .venue-map {
+        height: 300px;
+      }
+
+      .venue-info h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+
+  <section class="venue-hero">
+    <div class="venue-container">
+      <h1>Venue Information</h1>
+      <p>CloudConf 2026 | May 15, 2026</p>
+    </div>
+  </section>
+
+  <div class="venue-container">
+    <div class="venue-grid">
+      <div class="venue-info">
+        <h2>The Venue</h2>
+        <div class="venue-details">
+          <h3>📍 Location</h3>
+          <p><strong>Moscone Center</strong></p>
+          <p>747 Howard Street</p>
+          <p>San Francisco, CA 94103</p>
+          <p><a href="https://www.moscone.com" target="_blank" rel="noopener noreferrer">Visit Moscone Center Website</a></p>
+        </div>
+
+        <div class="venue-details">
+          <h3>🕐 Hours</h3>
+          <p><strong>Registration:</strong> 8:00 AM</p>
+          <p><strong>Event Start:</strong> 9:00 AM</p>
+          <p><strong>Event End:</strong> 5:30 PM</p>
+        </div>
+
+        <div class="venue-details">
+          <h3>🎟️ Parking</h3>
+          <p>Parking is available at the Moscone Center garage. Discounted rates available for event attendees with validation.</p>
+        </div>
+      </div>
+
+      <div class="venue-map">
+        <div>
+          <p>📍 Interactive map coming soon</p>
+          <p style="font-size: 0.9rem; margin-top: 1rem; color: #999;">Moscone Center, San Francisco</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="amenities">
+      <h2>Venue Amenities</h2>
+      <div class="amenities-grid">
+        <div class="amenity-item">
+          <h3>☕ Catering</h3>
+          <p>Breakfast, lunch, and refreshments provided throughout the day</p>
+        </div>
+        <div class="amenity-item">
+          <h3>📶 WiFi</h3>
+          <p>High-speed WiFi available throughout the venue</p>
+        </div>
+        <div class="amenity-item">
+          <h3>♿ Accessibility</h3>
+          <p>Fully accessible venue with elevators and accessible restrooms</p>
+        </div>
+        <div class="amenity-item">
+          <h3>🅿️ Parking</h3>
+          <p>On-site parking available with discounted rates</p>
+        </div>
+        <div class="amenity-item">
+          <h3>🎤 AV Equipment</h3>
+          <p>State-of-the-art audio and video equipment</p>
+        </div>
+        <div class="amenity-item">
+          <h3>🛎️ Support</h3>
+          <p>On-site staff available to assist attendees</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="transportation">
+      <h2>Getting There</h2>
+      <h3>🚗 By Car</h3>
+      <p>The Moscone Center is located in downtown San Francisco with easy freeway access. Parking is available on-site with discounted rates for attendees.</p>
+
+      <h3>🚌 Public Transportation</h3>
+      <p><strong>BART (Bay Area Rapid Transit):</strong> Take BART to the Civic Center or Powell Street stations, both within walking distance.</p>
+      <p><strong>Muni:</strong> Multiple bus lines serve the area. Check <a href="https://www.sfmta.com" target="_blank" rel="noopener noreferrer">SFMTA.com</a> for routes and schedules.</p>
+      <p><strong>Cable Cars:</strong> Historic cable cars run nearby for a scenic option.</p>
+
+      <h3>✈️ By Air</h3>
+      <p><strong>San Francisco International Airport (SFO):</strong> 13 miles south. Take BART directly to downtown San Francisco.</p>
+      <p><strong>Oakland International Airport (OAK):</strong> 40 miles east. Take BART or rental car.</p>
+      <p><strong>San Jose International Airport (SJC):</strong> 50 miles south. Rental car or shuttle recommended.</p>
+
+      <h3>🏨 Hotels</h3>
+      <p>Many hotels are within walking distance of Moscone Center. We recommend booking early as San Francisco hotels fill up quickly.</p>
+    </div>
+  </div>
+</Layout>
