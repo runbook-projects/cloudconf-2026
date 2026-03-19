@@ -1,0 +1,200 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'CloudConf 2026 - A one-day cloud infrastructure conference' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title} | CloudConf 2026</title>
+    <style is:global>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #ffffff;
+        color: #1a1a1a;
+        line-height: 1.6;
+      }
+
+      a {
+        color: #0066cc;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      a:hover {
+        color: #0052a3;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      header {
+        background-color: #0a0e27;
+        color: #ffffff;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: #ffffff;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover {
+        color: #64b5f6;
+      }
+
+      footer {
+        background-color: #0a0e27;
+        color: #ffffff;
+        padding: 3rem 0;
+        margin-top: 4rem;
+      }
+
+      footer .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      footer h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+
+      footer a {
+        color: #64b5f6;
+      }
+
+      footer a:hover {
+        color: #90caf9;
+      }
+
+      footer ul {
+        list-style: none;
+      }
+
+      footer li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 2rem;
+        padding-top: 2rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #999;
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          gap: 1rem;
+          font-size: 0.9rem;
+        }
+
+        .logo {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">CloudConf 2026</div>
+        <nav>
+          <ul>
+            <li><a href={import.meta.env.BASE_URL}>Home</a></li>
+            <li><a href={`${import.meta.env.BASE_URL}schedule`}>Schedule</a></li>
+            <li><a href={`${import.meta.env.BASE_URL}venue`}>Venue</a></li>
+            <li><a href={`${import.meta.env.BASE_URL}register`}>Register</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="container">
+        <div>
+          <h3>CloudConf 2026</h3>
+          <p>A one-day cloud infrastructure conference for engineers.</p>
+        </div>
+        <div>
+          <h3>Event Details</h3>
+          <ul>
+            <li>Date: May 15, 2026</li>
+            <li>Location: San Francisco, CA</li>
+            <li>Format: In-person</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Topics</h3>
+          <ul>
+            <li><a href="#">Kubernetes</a></li>
+            <li><a href="#">Serverless</a></li>
+            <li><a href="#">Platform Engineering</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CloudConf. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
